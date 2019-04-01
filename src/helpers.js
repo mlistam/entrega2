@@ -221,3 +221,13 @@ hbs.registerHelper('actualizarCurso', (curso) => {
 		return funciones.actualizarCurso(curso);
 	}
 });
+
+hbs.registerHelper('existeCurso', (curso) => {
+	listaCursos = funciones.listarCursos();
+    return (Object.keys(listaCursos).length != 0 && listaCursos.some(c => c.estado == 'disponible'))?'':'none';
+});
+
+hbs.registerHelper('mensajeInscribir', (curso) => {
+	listaCursos = funciones.listarCursos();
+    return (Object.keys(listaCursos).length != 0 && listaCursos.some(c => c.estado == 'disponible'))?'':"<div class='alert alert-warning' role='alert'>No hay cursos disponibles para inscripcion</div>";
+});

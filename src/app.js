@@ -31,14 +31,12 @@ app.use(function (req, res, next) {
 app.get('/', (req,res) => {
 	res.render('index',{
 		titulo:'Inicio',
-		nombre: 'mari'
 	});
 });
 
 app.get('/crearCurso', (req,res) => {
 	res.render('crear_curso',{
 		titulo:'Crear Curso',
-		nombre: 'mari'
 	});
 });
 
